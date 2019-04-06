@@ -16,10 +16,14 @@ const displayController = (() => {
 		}
 		return {renderBoard, checkBoard};
 	}
-	const playerFactory = (name) => {
+	const playerFactory = (name, boardArray) => {
 		const makeMove = () => {
 			console.log(name + ' is making a move');
-
+			for (index = 0; index < 9; index++) {
+				document.getElementById('a' + String(index)).onclick = function () {
+					this.innerHTML = name;
+				};
+			}
 		}
 		return {makeMove};
 	}
@@ -27,4 +31,4 @@ const displayController = (() => {
 })();
 var startingBoard = ['_', '_', '_', '_', '_', '_', '_', '_', '_'];
 displayController.board(startingBoard).renderBoard();
-displayController.playerFactory("PLAYER1").makeMove();
+displayController.playerFactory("P1").makeMove();
