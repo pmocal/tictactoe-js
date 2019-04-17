@@ -1,6 +1,11 @@
+h1 {
+	margin: 0;
+}
+
 #container {
   display: grid;
-  grid: repeat(3, 60px) / auto-flow 70px;
+  grid: repeat(3, 60px) / auto-flow 60px;
+  margin-top: 7px;
 }
 
 #container > div {
@@ -9,4 +14,8 @@
   height: 50px;
   font-size: 40px;
   text-align: center;
+}
+
+p {
+	margin: 0;
 }

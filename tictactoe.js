@@ -70,16 +70,12 @@ const displayController = (() => {
 
 	}
 
-	const startGame = () => {
+	const startGame = (player1Name, player2Name) => {
 
 		var board = Board();
 		startBoardArray = ['_', '_', '_', '_', '_', '_', '_', '_', '_'];
 		board.setBoard(startBoardArray);
-		board.makeMoves(startBoardArray, "P1", "P2");
-
-	}
-
-	const continueGame = () => {
+		board.makeMoves(startBoardArray, player1Name, player2Name);
 
 	}
 
@@ -87,4 +83,6 @@ const displayController = (() => {
 
 })();
 
-displayController.startGame();
+document.getElementById("submit").onclick = function () {
+	displayController.startGame(document.getElementById("player1").value, document.getElementById("player2").value);
+}
